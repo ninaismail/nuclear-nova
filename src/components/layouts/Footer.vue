@@ -1,9 +1,4 @@
 <script setup>
-import logo from '/public/AITSLogoWithSloganBig.webp'
-import x from '/public/images/socials/x.svg'
-import youtube from '/public/images/socials/youtube.svg'
-import facebook from '/public/images/socials/facebook.svg'
-import linkedin from '/public/images/socials/linkedin.svg'
 const footerlinks = [
   { id: 1, 
     name: 'Quick Links',
@@ -38,10 +33,10 @@ const footerlinks = [
   }
 ]
 const sociallinks = [
-  { id: 1, name:'Linkedin', to: 'https://www.linkedin.com/company/aitsmena/', target:"_blank", icon:linkedin },
-  { id: 2, name:'Facebook', to: 'https://www.facebook.com/people/AITS/100057457570552/', target:"_blank", icon:facebook },
-  { id: 3, name:'X', to: 'https://twitter.com/AITSglobal', target:"_blank", icon:x },
-  { id: 4, name:'Youtube', to: 'https://www.youtube.com/channel/UC2e3BlBOc1EfhuxlBAaLQNw', target:"_blank", icon:youtube }
+  { id: 1, name:'Linkedin', to: 'https://www.linkedin.com/company/aitsmena/', target:"_blank", icon:'/images/socials/linkedin.svg' },
+  { id: 2, name:'Facebook', to: 'https://www.facebook.com/people/AITS/100057457570552/', target:"_blank", icon:'/images/socials/facebook.svg' },
+  { id: 3, name:'X', to: 'https://twitter.com/AITSglobal', target:"_blank", icon:'/images/socials/x.svg' },
+  { id: 4, name:'Youtube', to: 'https://www.youtube.com/channel/UC2e3BlBOc1EfhuxlBAaLQNw', target:"_blank", icon:'/images/socials/youtube.svg' }
 ];
 </script>
 
@@ -54,7 +49,7 @@ const sociallinks = [
       </div>
       <div class="flex flex-wrap justify-between w-11/12 gap-6 px-6 my-10 lg:gap-0 2xl:w-8/12 lg:w-10/12">
             <div class="flex flex-col w-full gap-2 mb-10 lg:w-4/12 lg:mb-0">
-              <img :src="logo" alt="AITS - An IBI Company" width="164" height="43" center cover responsive loading="lazy" class="-ms-4"/>
+              <img src="/AITSLogoWithSloganBig.webp" alt="AITS - An IBI Company" width="164" height="43" center cover responsive loading="lazy" class="-ms-4"/>
               <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify">Stay connected with AITS on social media for the latest updates, news, and insights. Follow
               us on LinkedIn, Twitter, Facebook, and Instagram to join the conversation and stay informed.</p>
               <div class="relative z-[2] flex items-center gap-2">

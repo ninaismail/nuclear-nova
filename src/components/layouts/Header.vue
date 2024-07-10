@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import logo from '/public/AITSLogoWithSloganBig.webp'
 const navlinks = [
   { id: 1, name: 'Home', to: '/' },
   { id: 2, name: 'About', to: '/about' },
@@ -53,7 +52,7 @@ const toggleOpen = () => {
   <header class="fixed left-1/2 transform bg-bg/90 -translate-x-1/2 top-0 h-[67px] z-[9] 2xl:w-8/12 lg:w-10/12 w-11/12 lg:flex justify-between items-center mx-auto px-6 rounded-b-[16px]" 
     :class="{'h-fit' : isOpen}">
     <a id="Home" aria-label="go to home" to="/">
-      <img :src="logo" alt="AITS - An IBI Company" width="164" height="43" cover center responsive loading="eager" class="max-lg:my-[20px] -ms-4"/>    
+      <img src="/AITSLogoWithSloganBig.webp" alt="AITS - An IBI Company" width="164" height="43" cover center responsive loading="eager" class="max-lg:my-[20px] -ms-4"/>    
     </a>
     <!-- Desktop -->
     <nav class="items-center justify-end hidden w-8/12 h-full gap-2.5 lg:flex">
