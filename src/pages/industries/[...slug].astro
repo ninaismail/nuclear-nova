@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import InsideBody from '../../components/InsideBody.vue'
+import PostDetails from '../../components/PostDetails.vue'
+import { getSuccessStories } from '../../utils/api'
+
+export async function getStaticPaths() {
+  let stories = getSuccessStories();
+  return stories.map(({ slug, title,industry,date,summary,logo,body }) => {
+    return {
+      params: { slug },
+      props: { title, industry, date, summary, logo, body },
+    };
+  });
+}
+const {slug} = Astro.params;
+const {title, industry, date, summary, logo, body} = Astro.props;
+console.log(slug)
+console.log(title, industry, date, summary, logo, body)
+---
+
+<Layout title={title}>
+	<main>
+    <section class="relative -mt-40">
+      <PostDetails sectiontitle="Success Stories Details"
+      title={title}
+      industry={industry}
+      date={date}
+      summary={summary}
+      logo={logo}
+      body={body}/>
+      <InsideBody/>
+    </section>   
+  </main>
+</Layout>

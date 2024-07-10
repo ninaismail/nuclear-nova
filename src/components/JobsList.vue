@@ -1,20 +1,10 @@
 <script setup>
-// import { ref } from 'vue';
 defineProps({
     sectionid: String,
     sectiontitle: String,
     sectiondescription: String,
-    data: Array
+    data: Array,
 })
-
-// const filteredjobs = ref(jobsorinternships.value)
-// const filterJobs = () => {
-//    if (filteredjobs.value === jobsorinternships.value) {
-//     filteredjobs.value = jobsorinternships.value.filter(job => job.type === 'Internship');
-//    } else {
-//     filteredjobs.value = jobsorinternships.value;
-//    }
-// }
 </script>
 
 <template>
@@ -29,11 +19,11 @@ defineProps({
             <li v-for="(item, key) in data" :key="key" class="flex-grow lg:w-5/12 w-full relative group sm:min-h-[135px] bg-extended-noise bg-cover bg-center rounded-[16px]">
                 <div class="p-6 w-full h-full relative flex justify-between items-center gap-3 rounded-[16px] bg-gradient-to-br from-accent1/10 to-accent1/30 border-2 border-bg2">
                     <div class="w-8/12">
-                        <h3 class="font-[200] max-sm:text-[14px] text-accent1 underline mb-3">{{ item.type }}</h3>
-                        <h2 class="2xl:text-2xl lg:text-xl sm:text-lg text-accent1 font-[500] mb-3">{{ item.title }}</h2>
-                        <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify">{{ item.location }}</p>
+                        <h3 class="font-[200] max-sm:text-[14px] text-accent1 underline mb-3">{{ item?.type }}</h3>
+                        <h2 class="2xl:text-2xl lg:text-xl sm:text-lg text-accent1 font-[500] mb-3">{{ item?.title }}</h2>
+                        <p class="tracking-wide text-accent2 font-[200] max-sm:text-[14px] text-justify">{{ item?.location }}</p>
                     </div>
-                    <a :id="'go-to-' + item.title + '-page'" :aria-label="'apply for' + item.title" :to="item.to" :target="item.target" class="cursor-pointer px-4 py-3 mt-auto mb-0 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Apply</a>
+                    <a :id="'go-to-' + item?.title + '-page'" :aria-label="'apply for' + item?.title" :href="item?.to" :target="item?.target" class="cursor-pointer px-4 py-3 mt-auto mb-0 w-fit block max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Apply</a>
                 </div>
             </li>
         </ul>

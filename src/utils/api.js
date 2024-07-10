@@ -84,9 +84,9 @@ export function getSuccessStories (){
       // }
     ];
   }
-  export function getSuccessStoryById(id) {
+  export function getSuccessStoryBySlug(slug) {
     let stories = getSuccessStories();
-    return stories.find(story => story.id === parseInt(id));
+    return stories.find(story => story.slug === slug);
   }
   export function getBlogPosts(){
     return [
