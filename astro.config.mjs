@@ -5,7 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
   integrations: [vue({ appEntrypoint: '/src/pages/_app.ts' }),tailwind()],
   vite: {
     ssr: {
