@@ -1,0 +1,16 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import InsideBody from '../../../components/InsideBody.vue';
+import PostsList from '../../../components/PostsList.vue';
+import { getBlogPosts } from '../../../utils/api'
+const blogposts = getBlogPosts()
+---
+
+<Layout title="AITS - Resources">
+	<main>
+    <section class="relative -mt-40">
+      <PostsList sectiontitle="All Blogs" category="blog" sectiondescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim quis nostrud exercitation ullamco laboris nisi ut aliquip." data={blogposts}/>
+      <InsideBody/>
+    </section>   
+  </main>
+</Layout>
