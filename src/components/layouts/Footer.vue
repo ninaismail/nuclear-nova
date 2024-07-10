@@ -44,8 +44,8 @@ const sociallinks = [
     <footer class="relative flex flex-col items-center justify-center gap-10 pt-20 sm:pt-40">
       <div class="flex items-center justify-center w-11/12 gap-3 p-6 mx-auto max-sm:flex-wrap 2xl:w-8/12 lg:w-10/12 rounded-[16px] bg-bg">
         <input type="text" id="email" placeholder="example@gmail.com" class="md:w-6/12 w-full block px-4 py-3 bg-gradient-to-r from-accent1/10 to-accent1/20 backdrop-blur-[16px] rounded-[16px] text-accent1 bg-transparent border border-accent2 appearance-none focus:outline-none focus:ring-0 focus:border-bg2 peer"/>
-        <div to="/" class="block w-fit cursor-pointer px-4 py-3 max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Subscribe</div>
-          <!-- <a id="subscribe-to-newsletter" aria-label="subscribe to newsletter" to="/" class="relative z-[4] block w-fit cursor-pointer px-4 py-3 max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Subscribe</a> -->
+        <div href="/" class="block w-fit cursor-pointer px-4 py-3 max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Subscribe</div>
+          <!-- <a id="subscribe-to-newsletter" aria-label="subscribe to newsletter" href="/" class="relative z-[4] block w-fit cursor-pointer px-4 py-3 max-sm:text-[14px] font-[200] text-center rounded-[8px] text-accent1 bg-bg2 hover:brightness-125">Subscribe</a> -->
       </div>
       <div class="flex flex-wrap justify-between w-11/12 gap-6 px-6 my-10 lg:gap-0 2xl:w-8/12 lg:w-10/12">
             <div class="flex flex-col w-full gap-2 mb-10 lg:w-4/12 lg:mb-0">
@@ -64,7 +64,7 @@ const sociallinks = [
                     {{ item.name }}
                 </h1>            
                 <div v-for="(subitem, subkey) in item.submenu" :key="subkey" class="pb-3">
-                    <a :id="subitem.name" :aria-label="'go to ' + subitem.name" :to="{path: item.to, hash: subitem?.to}" 
+                    <a :id="subitem.name" :aria-label="'go to ' + subitem.name" :href="item.to + subitem?.to" 
                     class="font-[200] text-accent1 hover:brightness-75 max-sm:text-[14px]">
                     {{ subitem.name }}</a>
                 </div>                
@@ -80,4 +80,3 @@ const sociallinks = [
       </div>
     </footer>
 </template> 
-

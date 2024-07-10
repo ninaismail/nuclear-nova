@@ -8,10 +8,10 @@ export default defineConfig({
   integrations: [vue({ appEntrypoint: '/src/pages/_app.ts' }),tailwind()],
   vite: {
     ssr: {
-      noExternal: ['@vueuse/motion', 'vue-recaptcha']
+      noExternal: ['@vueuse/motion', 'vue-recaptcha', 'vue3-carousel']
     },
     optimizeDeps: {
-      include: ['vue', 'vue-recaptcha']
+      include: ['vue', 'vue-recaptcha', 'vue3-carousel']
     }
   }
 });
